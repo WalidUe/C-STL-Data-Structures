@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void display(set<int> mySet)
+{
+    for(auto it=mySet.begin(); it!= mySet.end(); it++)
+        cout<<*it<<" ";
+        cout<<endl;
+}
+
+int main()
+{
+    set<int> mySet {4,1,1,3,3,2,5};//1,2,3,4,5
+    
+  cout<<"Size: "<<mySet.size()<<endl;// 5
+
+    mySet.insert(7);
+   // auto p = mySet.insert(7).second;
+    cout<<boolalpha<<"Has it been added? "<<mySet.insert(7).second<<endl;
+    display(mySet);
+    auto it = mySet.find(5);
+    if(it != mySet.end())
+        mySet.erase(it);
+        
+     display(mySet); 
+     
+     cout<<"# 3 appeared? "<<mySet.count(3)<<endl;//(1 or 0) only for a Set:
+     
+     mySet.clear();
+     cout<<boolalpha<<"is my set empty? "<<mySet.empty()<<endl;
+
+    return 0;
+}

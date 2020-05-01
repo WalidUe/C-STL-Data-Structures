@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void display(list<int>myList)
+{
+    for(auto it = myList.begin(); it!= myList.end(); it++)
+        cout<<*it<< " ";
+        cout<<endl;
+}
+
+int main()
+{
+   list<int> myList{10,20,30,40,50};
+
+cout<<"Size: "<<myList.size()<<endl;
+cout<<"Front: "<<myList.front()<<endl;
+cout<<"Back: "<<myList.back()<<endl;
+
+auto it = find(myList.begin(), myList.end(), 30);
+cout<<"Found: "<<*it<<endl;
+
+myList.insert(it,25);
+display(myList);
+
+myList.erase(it);//erases the 30 !!!!
+display(myList);
+
+myList.resize(4);
+myList.reverse();//ONLY IN Doubly LINKED LIST
+display(myList);
+
+    return 0;
+}

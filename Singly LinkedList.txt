@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void display(forward_list<int>myList)
+{
+    for(auto it = myList.begin(); it!= myList.end(); it++)
+        cout<<*it<< " ";
+        cout<<endl;
+}
+
+int main()
+{
+  forward_list<int> myList{10,20,30,40,50};
+
+
+cout<<"Front: "<<myList.front()<<endl;
+
+auto it = find(myList.begin(), myList.end(), 20);
+
+if(it !=myList.end())//element found
+    cout<<"Found: "<<*it<<endl;
+
+myList.insert_after(it,25);
+display(myList);
+
+myList.erase_after(it);
+display(myList);
+
+myList.resize(4);
+display(myList);
+
+    return 0;
+}

@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int main()
+{
+   map<string, int> myMap;// name, score, we need to know the score of someone
+
+pair<string, int>p1 {"ahmed",15};
+//myMap.insert(make_pair("Ahmed",15))
+myMap["Ahmed"] = 15;//insert
+myMap.at("Ahmed") = 16;//insert //DO NOT USE until certain an element already exissts.
+///myMap["Ahmed"] = 16;//update
+myMap.insert(p1);// myMap.erase(it);
+
+cout<<"Count of Ahmed: "<<myMap.count("Ahmed")<<endl;
+auto it = myMap.find("Ahmed");
+    if(it != myMap.end())
+    {
+         cout<<"Found."<<endl;
+         myMap.erase("Ahmed");
+    }
+  // myMap.at("John") = 14;
+  myMap["John"] = 14;
+    it = myMap.find("John");
+    
+if(it != myMap.end())
+    myMap.erase(it);//delete using an iterator.
+
+myMap.clear();//removes all elements.
+cout<<boolalpha<<" Is my map empty? "<<myMap.empty()<<endl;
+    return 0;
+}

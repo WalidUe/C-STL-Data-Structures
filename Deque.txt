@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void display(deque<int>d)
+{
+    for(int i=0; i<d.size(); i++)
+        cout<<d.at(i)<< " ";
+        cout<<endl;
+}
+
+int main()
+{
+   deque<int> d{10,20,30,40,50};
+
+cout<<"Size: "<<d.size()<<endl;
+cout<<"Element at 2 is: "<<d.at(2)<<endl;
+
+cout<<"Front: "<<d.front()<<endl;
+cout<<"Back: "<<d.back()<<endl;
+
+
+d.push_back(60);
+d.push_front(10);
+
+display(d);
+
+d.pop_back();
+d.pop_front();
+
+display(d);
+    return 0;
+}
